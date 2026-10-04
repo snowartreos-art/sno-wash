@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Sno Wash | Erzurum Temizlik Şirketi – Ev, Ofis, İnşaat Sonrası</title>
-<meta name="description" content="Erzurum'da ev, ofis, inşaat sonrası ve taşınma temizliği, koltuk ve halı yıkama. Ekipman bizden, fiyat önceden belli. Hemen arayın: 0533 631 98 73.">
+<meta name="description" content="Erzurum'da ev, ofis, inşaat sonrası ve taşınma temizliği, cam temizliği. Ekipman bizden, fiyat önceden belli. Hemen arayın: 0533 631 98 73.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://snowartreos-art.github.io/sno-wash/">
 <meta name="theme-color" content="#0a7fb8">
@@ -15,7 +15,7 @@
 <meta property="og:locale" content="tr_TR">
 <meta property="og:site_name" content="Sno Wash">
 <meta property="og:title" content="Sno Wash | Erzurum Temizlik Şirketi">
-<meta property="og:description" content="Ev, ofis, inşaat sonrası temizlik ve koltuk yıkama. Erzurum genelinde hizmet. 0533 631 98 73">
+<meta property="og:description" content="Ev, ofis, inşaat sonrası ve taşınma temizliği. Erzurum genelinde hizmet. 0533 631 98 73">
 <meta property="og:url" content="https://snowartreos-art.github.io/sno-wash/">
 <meta name="twitter:card" content="summary">
 <script type="application/ld+json">
@@ -24,7 +24,7 @@
   "@type": "LocalBusiness",
   "@id": "https://snowartreos-art.github.io/sno-wash/#isletme",
   "name": "Sno Wash Temizlik Hizmetleri",
-  "description": "Erzurum'da ev, ofis, inşaat sonrası ve taşınma temizliği, koltuk ve halı yıkama, cam temizliği.",
+  "description": "Erzurum'da ev, ofis, inşaat sonrası ve taşınma temizliği, cam ve dış cephe temizliği.",
   "url": "https://snowartreos-art.github.io/sno-wash/",
   "telephone": "+90-533-631-98-73",
   "email": "snowartreos@gmail.com",
@@ -48,7 +48,6 @@
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ev temizliği" } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ofis temizliği" } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "İnşaat sonrası temizlik" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Koltuk ve halı yıkama" } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cam ve dış cephe temizliği" } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Taşınma temizliği" } }
     ]
@@ -167,6 +166,7 @@ section.block { padding-block: 72px; }
 .svc p { color: var(--muted); font-size: .95rem; }
 .svc .price { font: 500 .82rem var(--mono); color: var(--ink); margin-top: 6px; }
 @media (max-width: 880px) { .services { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 561px) { .svc:first-child { grid-column: span 2; } }
 @media (max-width: 560px) { .services { grid-template-columns: 1fr; } }
 
 .band { background: var(--ice); }
@@ -288,7 +288,6 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
           <span class="lbl">Ekstralar</span>
           <div class="checks">
             <label><input type="checkbox" id="x-cam" value="750"> Cam silme</label>
-            <label><input type="checkbox" id="x-koltuk" value="1200"> Koltuk yıkama</label>
             <label><input type="checkbox" id="x-firin" value="400"> Fırın içi</label>
           </div>
         </div>
@@ -326,12 +325,6 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
           <h3>İnşaat sonrası</h3>
           <p>Boya, alçı ve silikon kalıntısı, kaba toz, cam ve doğrama temizliği. Anahtar teslime hazır hâle getiririz.</p>
           <span class="price">m² başına ₺150'den</span>
-        </article>
-        <article class="svc">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12V8a2 2 0 012-2h12a2 2 0 012 2v4"/><path d="M2 12h20v5H2z"/><path d="M5 17v3M19 17v3"/></svg></div>
-          <h3>Koltuk ve halı yıkama</h3>
-          <p>Yerinde ekstraksiyon makinesiyle derin yıkama. Leke ve koku giderme, 4–6 saatte kuruma.</p>
-          <span class="price">Koltuk takımı ₺1.200'den</span>
         </article>
         <article class="svc">
           <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M12 3v18M4 12h16"/></svg></div>
@@ -413,7 +406,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
           <label>Hizmet
             <select id="f-hizmet" name="hizmet">
               <option>Ev temizliği</option><option>Ofis temizliği</option><option>İnşaat sonrası</option>
-              <option>Koltuk ve halı yıkama</option><option>Cam ve dış cephe</option><option>Taşınma temizliği</option>
+              <option>Cam ve dış cephe</option><option>Taşınma temizliği</option>
             </select>
           </label>
           <label>Tercih edilen tarih<input id="f-tarih" name="tarih" type="date"></label>
