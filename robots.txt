@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://snowash.com.tr/sitemap.xml
+Sitemap: https://snowartreos-art.github.io/sno-wash/sitemap.xml
