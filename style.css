@@ -144,6 +144,25 @@ footer a:hover{color:#fff}
 .plan h3{color:var(--navy);font-size:1.12rem;margin-bottom:6px}
 .plan p{color:var(--muted);font-size:.93rem}
 .mnav{display:none}
+.hero-grid{align-items:stretch}
+.hero-photo{position:relative;margin:0;border-radius:26px;overflow:hidden;min-height:440px;box-shadow:0 30px 60px rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.12)}
+.hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 25%}
+.hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(11,31,58,.75))}
+.hero-photo figcaption{position:absolute;left:18px;right:18px;bottom:18px;z-index:2;background:rgba(255,255,255,.95);color:var(--navy);border-radius:16px;padding:14px 16px;display:flex;flex-direction:column;gap:2px;box-shadow:0 10px 24px rgba(0,0,0,.2)}
+.hero-photo figcaption b{font-size:.95rem}
+.hero-photo figcaption span{font-size:.85rem;color:var(--muted)}
+.trust{padding:0 0 10px;margin-top:-30px;position:relative;z-index:3}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.trust .stat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 18px;flex-direction:column;align-items:flex-start;gap:4px;box-shadow:0 10px 28px rgba(11,31,58,.08)}
+.trust .stat b{font-size:1.15rem;color:var(--frost-d);min-width:0}
+.trust .stat small{color:var(--muted);font-size:.86rem;line-height:1.45}
+.svc{padding:0;overflow:hidden}
+.svc-img{width:100%;height:190px;object-fit:cover;object-position:center 30%;display:block}
+.svc .ic{margin:-26px 0 12px 24px;position:relative;box-shadow:0 6px 16px rgba(11,31,58,.12);background:#fff}
+.svc h3,.svc p,.svc .more{margin-left:24px;margin-right:24px}
+.svc .more{margin-bottom:24px}
+@media (max-width:920px){.trust-grid{grid-template-columns:repeat(2,1fr)}.hero-photo{min-height:380px}.trust{margin-top:-20px}}
+@media (max-width:560px){.trust-grid{grid-template-columns:1fr 1fr;gap:10px}.trust .stat{padding:12px}.hero-photo{min-height:340px}}
 @media (max-width:560px){.nav .tel-cta{display:none}.stat b{min-width:88px;font-size:1.1rem}}
 @media (max-width:920px){
   .svc-grid,.plans{grid-template-columns:1fr}
