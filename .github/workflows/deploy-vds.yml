@@ -1,0 +1,49 @@
+name: VDS'e dağıt
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-vds
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Gizli değerleri kontrol et
+        id: check
+        env:
+          HOST: ${{ secrets.VDS_HOST }}
+        run: |
+          if [ -z "$HOST" ]; then
+            echo "VDS_HOST tanımlı değil, dağıtım atlandı."
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.check.outputs.skip != 'true'
+
+      - name: SSH anahtarını hazırla
+        if: steps.check.outputs.skip != 'true'
+        env:
+          KEY: ${{ secrets.VDS_SSH_KEY }}
+          HOST: ${{ secrets.VDS_HOST }}
+        run: |
+          install -d -m 700 ~/.ssh
+          printf '%s\n' "$KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -H "$HOST" >> ~/.ssh/known_hosts
+
+      - name: rsync ile gönder
+        if: steps.check.outputs.skip != 'true'
+        env:
+          HOST: ${{ secrets.VDS_HOST }}
+          USER: ${{ secrets.VDS_USER }}
+        run: |
+          rsync -az --delete \
+            --exclude '.git' --exclude '.github' --exclude 'deploy' \
+            --exclude 'README.md' --exclude 'CNAME' \
+            ./ "${USER:-deploy}@${HOST}:/var/www/snowtemizlik/"
